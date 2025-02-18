@@ -1,0 +1,31 @@
+services:
+    librarymanagementapi:
+        image: ${DOCKER_REGISTRY-}librarymanagementapi
+        build:
+            context: .
+            dockerfile: LibraryManagementAPIExercise/Dockerfile
+        ports:
+            - "5050:5100"
+        depends_on:
+            - seq
+        networks:
+            - library_network
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - ASPNETCORE_URLS=http://+:5100
+            - Serilog__WriteTo__2__Args__serverUrl=http://seq:5341
+
+    seq:
+        image: datalust/seq
+        container_name: seq
+        restart: unless-stopped
+        environment:
+          - ACCEPT_EULA=Y
+        ports:
+          - "8041:80"
+        networks:
+          - library_network
+
+networks:
+    library_network:
+        driver: bridge

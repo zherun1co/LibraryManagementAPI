@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagementAPI", "LibraryManagementAPIExercise\LibraryManagementAPI.csproj", "{120B09F8-9D49-4402-B5B9-35139FD402D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagementModel", "LibraryManagementModel\LibraryManagementModel.csproj", "{4B1C7345-EF02-4F6E-A303-4647D4276EBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagementRepository", "LibraryManagementRepository\LibraryManagementRepository.csproj", "{7804D445-CFF6-4032-8C34-9E9CC7B55FB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagementServices", "LibraryManagementServices\LibraryManagementServices.csproj", "{0E857019-F44B-4C30-B6F9-4F7B9447A292}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{BE965922-6E2C-4C3E-AA41-3D4FACC1325E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagementUnitTest", "LibraryManagementUnitTest\LibraryManagementUnitTest.csproj", "{5C42F37D-41BB-4D11-9E52-D2767A4F01DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{120B09F8-9D49-4402-B5B9-35139FD402D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{120B09F8-9D49-4402-B5B9-35139FD402D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{120B09F8-9D49-4402-B5B9-35139FD402D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{120B09F8-9D49-4402-B5B9-35139FD402D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B1C7345-EF02-4F6E-A303-4647D4276EBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B1C7345-EF02-4F6E-A303-4647D4276EBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B1C7345-EF02-4F6E-A303-4647D4276EBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B1C7345-EF02-4F6E-A303-4647D4276EBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7804D445-CFF6-4032-8C34-9E9CC7B55FB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7804D445-CFF6-4032-8C34-9E9CC7B55FB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7804D445-CFF6-4032-8C34-9E9CC7B55FB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7804D445-CFF6-4032-8C34-9E9CC7B55FB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E857019-F44B-4C30-B6F9-4F7B9447A292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E857019-F44B-4C30-B6F9-4F7B9447A292}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E857019-F44B-4C30-B6F9-4F7B9447A292}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E857019-F44B-4C30-B6F9-4F7B9447A292}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE965922-6E2C-4C3E-AA41-3D4FACC1325E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE965922-6E2C-4C3E-AA41-3D4FACC1325E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE965922-6E2C-4C3E-AA41-3D4FACC1325E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE965922-6E2C-4C3E-AA41-3D4FACC1325E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C42F37D-41BB-4D11-9E52-D2767A4F01DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C42F37D-41BB-4D11-9E52-D2767A4F01DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C42F37D-41BB-4D11-9E52-D2767A4F01DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C42F37D-41BB-4D11-9E52-D2767A4F01DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
