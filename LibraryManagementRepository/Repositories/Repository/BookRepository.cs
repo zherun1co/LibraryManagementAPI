@@ -55,7 +55,7 @@ namespace LibraryManagementRepository.Repositories.Repository
 
                 if (listBookCategories.Count > 0) {
                     foreach (BookDTO book in books.Books) {
-                        book.Categories = listBookCategories.Where(o => o.BookId == book.Id).Select(i => new BookCategoryDTO {
+                        book.Categories = listBookCategories.Where(o => o.BookId == book.Id && o.CategoryId != Guid.Empty).Select(i => new BookCategoryDTO {
                             Id = i.CategoryId,
                             Name = i.CategoryName
                         }).ToList();
