@@ -8,12 +8,12 @@ services:
             - "5050:5100"
         depends_on:
             - seq
+            - keycloak
         networks:
             - library_network
         environment:
             - ASPNETCORE_ENVIRONMENT=Development
             - ASPNETCORE_URLS=http://+:5100
-            - Serilog__WriteTo__2__Args__serverUrl=http://seq:5341
 
     seq:
         image: datalust/seq
@@ -26,6 +26,24 @@ services:
         networks:
           - library_network
 
+    keycloak:
+        image: quay.io/keycloak/keycloak:latest
+        container_name: keycloak
+        restart: unless-stopped
+        environment:
+            - KEYCLOAK_ADMIN=admin
+            - KEYCLOAK_ADMIN_PASSWORD=bN$IhJBf-2
+        ports:
+            - "8045:8080"
+        volumes:
+            - keycloak_data:/opt/keycloak/data
+        networks:
+            - library_network
+        command: start-dev
+
 networks:
-    library_network:
-        driver: bridge
+  library_network:
+    driver: bridge
+
+volumes:
+  keycloak_data:

@@ -3,10 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using LibraryManagementModel.Models;
 using LibraryManagementModel.Filters;
 using LibraryManagementModel.Responses;
+using Microsoft.AspNetCore.Authorization;
 using LibraryManagementServices.BusinessServices.Interface;
 
 namespace LibraryManagementAPI.Controllers
 {
+    [Authorize]
     [Route("api/books")]
     public class BookController(IBookService iBookService) : Controller
     {
