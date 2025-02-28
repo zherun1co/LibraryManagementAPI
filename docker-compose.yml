@@ -14,6 +14,9 @@ services:
         environment:
             - ASPNETCORE_ENVIRONMENT=Development
             - ASPNETCORE_URLS=http://+:5100
+            - TZ=America/Mexico_City
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
 
     seq:
         image: datalust/seq
@@ -32,10 +35,13 @@ services:
         restart: unless-stopped
         environment:
             - KEYCLOAK_ADMIN=admin
-            - KEYCLOAK_ADMIN_PASSWORD=bN$IhJBf-2
+            - KEYCLOAK_ADMIN_PASSWORD=password
+            - TZ=America/Mexico_City
+            - KEYCLOAK_CORS=true
         ports:
             - "8045:8080"
         volumes:
+            - /etc/localtime:/etc/localtime:ro
             - keycloak_data:/opt/keycloak/data
         networks:
             - library_network
