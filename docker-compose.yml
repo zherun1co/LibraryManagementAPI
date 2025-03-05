@@ -8,9 +8,9 @@ services:
           - "5050:5100"
         depends_on:
           - seq
-          - keycloak
         networks:
           - library_network
+          - auth_network
         environment:
           - ASPNETCORE_ENVIRONMENT=Development
           - ASPNETCORE_URLS=http://+:5100
@@ -29,33 +29,9 @@ services:
         networks:
             - library_network
 
-    keycloak:
-        image: quay.io/keycloak/keycloak:latest
-        container_name: keycloak
-        restart: unless-stopped
-        environment:
-            - KEYCLOAK_ADMIN=admin
-            - KEYCLOAK_ADMIN_PASSWORD=password
-            - TZ=America/Mexico_City
-            - KEYCLOAK_CORS=true
-            - KC_DB=mssql
-            - KC_DB_URL=jdbc:sqlserver://azure-server.database.windows.net:1433;database=KeycloakDB;encrypt=true;trustServerCertificate=true;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
-            - KC_DB_USERNAME=UserName
-            - KC_DB_PASSWORD=Password
-            - KC_DB_SCHEMA=dbo
-        ports:
-            - "8045:8080"
-        volumes:
-            - /etc/localtime:/etc/localtime:ro
-            - keycloak_data:/opt/keycloak/data
-            - ./keycloak/themes:/opt/keycloak/themes
-        networks:
-            - library_network
-        command: start-dev
-
 networks:
   library_network:
     driver: bridge
-
-volumes:
-  keycloak_data:
+  auth_network:
+    name: authmanager_auth_network
+    external: true
