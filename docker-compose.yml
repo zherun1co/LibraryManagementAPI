@@ -2,32 +2,32 @@ services:
     librarymanagementapi:
         image: ${DOCKER_REGISTRY-}librarymanagementapi
         build:
-            context: .
-            dockerfile: LibraryManagementAPIExercise/Dockerfile
+          context: .
+          dockerfile: LibraryManagementAPIExercise/Dockerfile
         ports:
-            - "5050:5100"
+          - "5050:5100"
         depends_on:
-            - seq
-            - keycloak
+          - seq
+          - keycloak
         networks:
-            - library_network
+          - library_network
         environment:
-            - ASPNETCORE_ENVIRONMENT=Development
-            - ASPNETCORE_URLS=http://+:5100
-            - TZ=America/Mexico_City
+          - ASPNETCORE_ENVIRONMENT=Development
+          - ASPNETCORE_URLS=http://+:5100
+          - TZ=America/Mexico_City
         volumes:
-            - /etc/localtime:/etc/localtime:ro
+          - /etc/localtime:/etc/localtime:ro
 
     seq:
         image: datalust/seq
         container_name: seq
         restart: unless-stopped
         environment:
-          - ACCEPT_EULA=Y
+            - ACCEPT_EULA=Y
         ports:
-          - "8041:80"
+            - "8041:80"
         networks:
-          - library_network
+            - library_network
 
     keycloak:
         image: quay.io/keycloak/keycloak:latest
@@ -38,11 +38,17 @@ services:
             - KEYCLOAK_ADMIN_PASSWORD=password
             - TZ=America/Mexico_City
             - KEYCLOAK_CORS=true
+            - KC_DB=mssql
+            - KC_DB_URL=jdbc:sqlserver://azure-server.database.windows.net:1433;database=KeycloakDB;encrypt=true;trustServerCertificate=true;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+            - KC_DB_USERNAME=UserName
+            - KC_DB_PASSWORD=Password
+            - KC_DB_SCHEMA=dbo
         ports:
             - "8045:8080"
         volumes:
             - /etc/localtime:/etc/localtime:ro
             - keycloak_data:/opt/keycloak/data
+            - ./keycloak/themes:/opt/keycloak/themes
         networks:
             - library_network
         command: start-dev

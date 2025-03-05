@@ -10,10 +10,25 @@
     <DockerServiceName>librarymanagementapi</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="keycloak-export\**" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="docker-compose.override.yml">
       <DependentUpon>docker-compose.yml</DependentUpon>
     </None>
     <None Include="docker-compose.yml" />
     <None Include=".dockerignore" />
+    <None Include="keycloak\themes\library-management-theme\login\error.ftl" />
+    <None Include="keycloak\themes\library-management-theme\login\login-otp.ftl" />
+    <None Include="keycloak\themes\library-management-theme\login\login.ftl" />
+    <None Include="keycloak\themes\library-management-theme\login\messages.properties" />
+    <None Include="keycloak\themes\library-management-theme\login\resources\css\login-otp.css" />
+    <None Include="keycloak\themes\library-management-theme\login\resources\css\login.css" />
+    <None Include="keycloak\themes\library-management-theme\login\resources\img\login-illustration.png" />
+    <None Include="keycloak\themes\library-management-theme\login\resources\img\login-illustration1.png" />
+    <None Include="keycloak\themes\library-management-theme\login\resources\img\logo.png" />
+    <None Include="keycloak\themes\library-management-theme\login\resources\img\otp-icon.png" />
+    <None Include="keycloak\themes\library-management-theme\login\template.ftl" />
+    <None Include="keycloak\themes\library-management-theme\theme.properties" />
   </ItemGroup>
 </Project>

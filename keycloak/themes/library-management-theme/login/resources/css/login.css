@@ -1,0 +1,177 @@
+/* Computer Settings */
+
+html, body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffffff, #e5e6ed);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.login-wrapper {
+    display: flex;
+    width: 90%;
+    max-width: 900px;
+    height: 80vh;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.login-left {
+    width: 50%;
+    background: linear-gradient(269deg, #ffffff, #39469a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .login-left .login-image {
+        max-width: 95%;
+        height: auto;
+    }
+
+.login-right {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.title {
+    color: #3e4d6c;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo-image {
+    width: 40px;
+    height: 40px;
+}
+
+.login-right form {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group {
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+}
+
+    .input-group input {
+        width: 100%;
+        padding: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: 100%;
+    max-width: 350px;
+    padding: 14px;
+    background-color: #4758b8;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+    button:hover {
+        background-color: #39469a;
+    }
+
+/* Computer Settings */
+
+/* Mobile Settings */
+
+@media screen and (max-width: 768px) {
+    html, body {
+        display: block;
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+        padding-bottom: 20px;
+    }
+
+    .login-wrapper {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        max-height: none;
+        margin: 20px auto;
+        overflow: visible;
+    }
+
+    .login-left {
+        width: 100%;
+        text-align: center;
+    }
+
+        .login-left .login-image {
+            max-width: 80%;
+        }
+
+    .login-right {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .title-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .login-right form {
+        width: 100%;
+        max-width: 90%;
+    }
+
+    .button-container {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Mobile Settings */
