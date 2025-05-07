@@ -1,9 +1,9 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagementAPI", "LibraryManagementAPIExercise\LibraryManagementAPI.csproj", "{120B09F8-9D49-4402-B5B9-35139FD402D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagementAPI", "LibraryManagementAPI\LibraryManagementAPI.csproj", "{120B09F8-9D49-4402-B5B9-35139FD402D5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagementModel", "LibraryManagementModel\LibraryManagementModel.csproj", "{4B1C7345-EF02-4F6E-A303-4647D4276EBE}"
 EndProject

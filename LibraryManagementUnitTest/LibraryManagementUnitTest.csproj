@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LibraryManagementAPIExercise\LibraryManagementAPI.csproj" />
+    <ProjectReference Include="..\LibraryManagementAPI\LibraryManagementAPI.csproj" />
   </ItemGroup>
 
   <ItemGroup>
