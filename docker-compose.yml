@@ -3,20 +3,20 @@ services:
         image: ${DOCKER_REGISTRY-}librarymanagementapi
         build:
           context: .
-          dockerfile: LibraryManagementAPIExercise/Dockerfile
+          dockerfile: LibraryManagementAPI/Dockerfile
         ports:
-          - "5050:5100"
+            - "5050:5100"
         depends_on:
-          - seq
+            - seq
         networks:
-          - library_network
-          - auth_network
+            - library_network
+            - auth_network
         environment:
-          - ASPNETCORE_ENVIRONMENT=Development
-          - ASPNETCORE_URLS=http://+:5100
-          - TZ=America/Mexico_City
+            - ASPNETCORE_ENVIRONMENT=Development
+            - ASPNETCORE_URLS=http://+:5100
+            - TZ=America/Mexico_City
         volumes:
-          - /etc/localtime:/etc/localtime:ro
+            - /etc/localtime:/etc/localtime:ro
 
     seq:
         image: datalust/seq

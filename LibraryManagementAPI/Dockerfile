@@ -12,13 +12,13 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["LibraryManagementAPIExercise/LibraryManagementAPI.csproj", "LibraryManagementAPIExercise/"]
+COPY ["LibraryManagementAPI/LibraryManagementAPI.csproj", "LibraryManagementAPI/"]
 COPY ["LibraryManagementModel/LibraryManagementModel.csproj", "LibraryManagementModel/"]
 COPY ["LibraryManagementServices/LibraryManagementServices.csproj", "LibraryManagementServices/"]
 COPY ["LibraryManagementRepository/LibraryManagementRepository.csproj", "LibraryManagementRepository/"]
-RUN dotnet restore "./LibraryManagementAPIExercise/LibraryManagementAPI.csproj"
+RUN dotnet restore "./LibraryManagementAPI/LibraryManagementAPI.csproj"
 COPY . .
-WORKDIR "/src/LibraryManagementAPIExercise"
+WORKDIR "/src/LibraryManagementAPI"
 RUN dotnet build "./LibraryManagementAPI.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
